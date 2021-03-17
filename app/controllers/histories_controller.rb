@@ -1,25 +1,20 @@
 class HistoriesController < ApplicationController
   before_action :set_history, only: %i[ show edit update destroy ]
 
-  # GET /histories or /histories.json
   def index
     @histories = History.all
   end
 
-  # GET /histories/1 or /histories/1.json
   def show
   end
 
-  # GET /histories/new
   def new
     @history = History.new
   end
 
-  # GET /histories/1/edit
   def edit
   end
 
-  # POST /histories or /histories.json
   def create
     @history = History.new(history_params)
 
@@ -34,7 +29,6 @@ class HistoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /histories/1 or /histories/1.json
   def update
     respond_to do |format|
       if @history.update(history_params)
@@ -47,7 +41,6 @@ class HistoriesController < ApplicationController
     end
   end
 
-  # DELETE /histories/1 or /histories/1.json
   def destroy
     @history.destroy
     respond_to do |format|
@@ -57,12 +50,10 @@ class HistoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_history
       @history = History.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def history_params
       params.require(:history).permit(:date, :weight, :height, :description, :pet_id)
     end
