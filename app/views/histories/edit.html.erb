@@ -2,5 +2,5 @@
 
 <%= render 'form', history: @history %>
 
-<%= link_to 'Show', @history %> |
-<%= link_to 'Back', histories_path %>
+<%= link_to 'Show', [@pet, @history] %> |
+<%= link_to 'Back', pet_histories_path(@pet) %>

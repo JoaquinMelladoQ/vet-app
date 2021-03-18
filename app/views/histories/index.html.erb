@@ -22,9 +22,9 @@
         <td><%= history.height %></td>
         <td><%= history.description %></td>
         <td><%= history.pet %></td>
-        <td><%= link_to 'Show', history %></td>
-        <td><%= link_to 'Edit', edit_history_path(history) %></td>
-        <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@pet, @history] %></td>
+        <td><%= link_to 'Edit', [@pet, @history] %></td>
+        <td><%= link_to 'Destroy', [@pet, @history], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New History', new_history_path %>
+<%= link_to 'New History', new_pet_history_path(@pet) %>

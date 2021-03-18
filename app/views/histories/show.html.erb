@@ -25,5 +25,5 @@
   <%= @history.pet %>
 </p>
 
-<%= link_to 'Edit', edit_history_path(@history) %> |
-<%= link_to 'Back', histories_path %>
+<%= link_to 'Edit', edit_pet_history_path(@pet, @history) %> |
+<%= link_to 'Back', pet_histories_path(@pet) %>
