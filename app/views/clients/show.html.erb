@@ -15,5 +15,12 @@
   <%= @client.email %>
 </p>
 
+<% @pets.each do |p| %>
+  <p>Average Weigth</p>
+  <%= p.avg_weight %>
+  <p>Average Heigth</p>
+  <%= p.avg_height %>
+<% end %><br>
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

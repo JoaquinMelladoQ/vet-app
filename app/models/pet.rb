@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  has_many :pet_histories
+  has_many :histories
   belongs_to :client
 
   def history_count

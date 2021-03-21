@@ -23,7 +23,12 @@
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday, start_year: 1940 %>
+    <%= form.date_select :birthday, start_year: 1990 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.select :client_id, options_from_collection_for_select(@clients, :id, :name) %>
   </div>
 
   <div class="actions">

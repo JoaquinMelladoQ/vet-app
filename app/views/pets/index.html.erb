@@ -8,8 +8,8 @@
       <th>Name</th>
       <th>Breed</th>
       <th>Birthday</th>
-      <th>Histories count</th>
-      <th colspan="4"></th>
+      <th>Visitas</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -19,8 +19,7 @@
         <td><%= pet.name %></td>
         <td><%= pet.breed %></td>
         <td><%= pet.birthday %></td>
-        <td><%= pet.histories_count %></td>
-        <td><%= link_to 'History', pet_histories_path(pet) %></td>
+        <td><%= pet.history_count %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
