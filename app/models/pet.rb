@@ -1,27 +1,26 @@
 class Pet < ApplicationRecord
-  has_many :histories, dependent: :destroy
-  
-  def to_s
-    name
+  has_many :pet_histories
+  belongs_to :client
+
+  def history_count
+    histories.count
   end
 
-  def histories_count
-    self.histories.count
+  def avg_weight
+    pet_arr = histories.pluck(:weight)
+    pet_arr.sum / pet_arr.size
   end
 
-  def average_height
-    self.histories.pluck(:height).sum / self.histories_count 
-  end
-
-  def average_weight
-    self.histories.sum(:weight) / self.histories_count 
+  def avg_height
+    pet_arr = histories.pluck(:heigth)
+    (pet_arr.sum).to_i / pet_arr.size
   end
 
   def max_weight
-    self.histories.maximum(:weight)
+    (histories.pluck(:weight)).max
   end
 
   def max_height
-    self.histories.maximum(:weight)
+    (histories.pluck(:heigth)).max
   end
 end
